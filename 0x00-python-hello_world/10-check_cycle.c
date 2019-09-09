@@ -9,17 +9,21 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *head;
+	listint_t *past, *future;
 
-	head = malloc(sizeof(int *));
-	if (!head)
-		exit(EXIT_FAILURE);
-	head = list;
-	while (list->next != NULL)
+	past = list;
+	future = list->next;
+	while (future)
 	{
-		if (list->next == head)
+		if (past == future)
+		{
 			return (1);
-		list = list->next;
+		}
+		past = past->next;
+		future = future->next;
+		if (!future)
+			break;
+		future = future->next;
 	}
 	return (0);
 }

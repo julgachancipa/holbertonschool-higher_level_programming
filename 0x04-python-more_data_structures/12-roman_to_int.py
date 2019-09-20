@@ -6,6 +6,8 @@ def roman_to_int(roman_string):
     res = 0
     for i in range(len(roman_string) - 1, -1, -1):
         n = conv_rom_int(roman_string[i])
+        if n == -1:
+            return 0
         if last == -1:
             break
         if n == last:
@@ -21,7 +23,10 @@ def roman_to_int(roman_string):
 
 def conv_rom_int(n):
     trl = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    return trl[n]
+    if n in trl:
+        return trl[n]
+    else:
+        return -1
 
 
 def last_fun(last):

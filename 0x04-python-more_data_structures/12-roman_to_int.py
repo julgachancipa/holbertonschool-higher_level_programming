@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not roman_string:
+    if not roman_string or None:
         return 0
     last = 1
     res = 0

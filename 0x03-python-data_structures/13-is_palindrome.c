@@ -54,7 +54,7 @@ int is_palindrome(listint_t **head)
 	if (*head == NULL)
 		return (1);
 	len = listint_len(*head);
-	for (i = 0; i < len; i++)
+	for (i = 0; i < len / 2; i++)
 	{
 		a = get_n_at_index(*head, i);
 		b = get_n_at_index(*head, len - i - 1);

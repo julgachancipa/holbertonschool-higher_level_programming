@@ -23,7 +23,8 @@ class Square:
         if self.__size == 0 and self.__position[0]:
             for j in range(self.__position[0]):
                 s_list.append(" " * self.__position[0])
-                s_list.append("\n")
+                if (self.__position[0] - 1) != j:
+                    s_list.append("\n")
         return ("".join(s_list))
 
     def area(self):

@@ -16,7 +16,8 @@ class Square:
                 s_list.append(" " * self.__position[0])
                 for j in range(self.__size):
                     s_list.append("#")
-                s_list.append("\n")
+                if (self.__size - 1) != i:
+                    s_list.append("\n")
         else:
             s_list.append("\n")
         return ("".join(s_list))

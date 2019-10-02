@@ -10,16 +10,16 @@ class Square:
 
     def __str__(self):
         s_list = []
-        if self.__size:
+
+        if self.__position[1]:
             s_list.append("\n" * self.__position[1])
-            for i in range(self.__size):
+        for i in range(self.__size):
+            if self.__position[0]:
                 s_list.append(" " * self.__position[0])
-                for j in range(self.__size):
-                    s_list.append("#")
-                if (self.__size - 1) != i:
-                    s_list.append("\n")
-        else:
-            s_list.append("\n")
+            for j in range(self.__size):
+                s_list.append("#")
+            if (self.__size - 1) != i:
+                s_list.append("\n")
         return ("".join(s_list))
 
     def area(self):

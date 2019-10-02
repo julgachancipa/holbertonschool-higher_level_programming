@@ -5,18 +5,8 @@ class Square:
     (based on 5-square.py)
     """
     def __init__(self, size=0,  position=(0, 0)):
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
-
-        if position[0] < 0 or position[1] < 0 \
-           or type(position) != tuple or len(position) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         return self.__size * self.__size

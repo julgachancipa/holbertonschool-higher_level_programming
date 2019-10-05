@@ -1,0 +1,49 @@
+================================================================
+                How to use 5-text_indentation.py
+================================================================
+
+Description: prints a text with 2 new lines after 
+	     each of these characters: ., ? and :
+Prototype:   def text_indentation(text):
+Conditions:  - text must be a string
+	     - There should be no space at the beginning
+	       or at the end of each printed line
+________________________________________________________________
+Import the function from the file:
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Now use it:
+    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud:""")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
+    Non autem hoc:
+    <BLANKLINE>
+    igitur ne illud quidem.
+    <BLANKLINE>
+    Fortasse id optimum, sed ubi illud:
+    <BLANKLINE>
+    
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+    
+    >>> text_indentation(5)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+    
+    >>> text_indentation("?:.")
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+    >>> text_indentation("?")
+    ?
+    <BLANKLINE>
+

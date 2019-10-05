@@ -12,12 +12,9 @@ def text_indentation(text):
     """
     if type(text) is not str:
         raise TypeError("text must be a string")
-    flag = 1
-    for l in text:
-        if flag:
-            print(l, end='')
-        if l in ".?:":
-            flag = 0
-            print('\n')
-        else:
-            flag = 1
+    for i in range(len(text)):
+        if i > 0 and text[i] == ' ' and text[i - 1] in ".:?":
+            continue
+        print(text[i], end='')
+        if text[i] in ".:?":
+            print("\n")

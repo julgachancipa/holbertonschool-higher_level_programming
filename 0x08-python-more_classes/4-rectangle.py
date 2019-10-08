@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 class Rectangle:
     """
-    class Rectangle that defines a Rectangle 
+    class Rectangle that defines a Rectangle
     - width
     - height
     - area
@@ -11,7 +11,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-        
+
     def __str__(self):
         rec = []
         if self.__width == 0 or self.__height == 0:
@@ -20,9 +20,10 @@ class Rectangle:
             rec.append("#" * self.__width)
             rec.append("\n")
         return ("".join(rec))
-        
+
     def __repr__(self):
-        return ("Rectangle({}, {})".format(str(self.__width), str(self.__height)))
+        return ("Rectangle({}, {})"
+                .format(str(self.__width), str(self.__height)))
 
     @property
     def width(self):

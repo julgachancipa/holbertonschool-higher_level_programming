@@ -21,7 +21,8 @@ class Rectangle:
             return ""
         for i in range(self.__height):
             rec.append("#" * self.__width)
-            rec.append("\n")
+            if i != self.__height - 1:
+                rec.append("\n")
         return ("".join(rec))
 
     def __repr__(self):

@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 class BaseGeometry:
+    """
+    -Public instance method: def area(self): that raises
+    an Exception with the message area() is not implemented
+    -Public instance method: def integer_validator(self, name, value):
+    that validates value
+    """
     def area(self):
         raise Exception("area() is not implemented")
 
@@ -11,6 +17,12 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """
+    Instantiation with width and height: def __init__(self, width, height)
+    the area() method must be implemented
+    print() should print, and str() should return,
+    the following rectangle description: [Rectangle] <width>/<height>
+    """
     def __init__(self, width, height):
         super().integer_validator("width", width)
         self.__width = width

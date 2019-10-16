@@ -1,0 +1,51 @@
+================================================================
+                   How to use 7-base_geometry.py
+================================================================
+
+Class: BaseGeometry
+Description: Base class for create future figures
+
+Method:      def integer_validator(self, name, value)
+Description: verify if the integer
+
+________________________________________________________________
+Import the function from the file:
+    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Now use it:
+    >>> fig_1 = BaseGeometry()
+    >>> fig_1.integer_validator("name", 1)
+    >>> fig_1.integer_validator("name", 1)
+    >>> fig_1.integer_validator("name", -5)
+    Traceback (most recent call last):
+    ValueError: name must be greater than 0
+    >>> fig_1.integer_validator("name", "todo mal")
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+    >>> fig_1.integer_validator(5, "todo mal")
+    Traceback (most recent call last):
+    TypeError: 5 must be an integer
+    >>> fig_1.integer_validator("name", (0, 1))
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+    >>> fig_1.integer_validator("name", [5, 4, 5])
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+    >>> fig_1.integer_validator("name", (0))
+    Traceback (most recent call last):
+    ValueError: name must be greater than 0
+    >>> fig_1.integer_validator("name", 4.1)
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+    >>> fig_1.integer_validator("name", True)
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+    >>> fig_1.integer_validator("name", {'1': 1})
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+    >>> fig_1.integer_validator("name", None)
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+    >>> fig_1.integer_validator(None)
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'

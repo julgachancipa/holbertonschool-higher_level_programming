@@ -1,0 +1,125 @@
+================================================================
+                   How to use 1-my_list.py
+================================================================
+
+Class: MyList
+Description: inherits from list.
+
+Method:      def print_sorted(self):
+Description: prints the list, but sorted (ascending sort)
+
+________________________________________________________________
+Import the function from the file:
+    >>> MyList = __import__("1-my_list").MyList
+
+Now use it:
+
+    >>> my_list_1 = MyList()
+    >>> my_list_1.append(5)
+    >>> print(my_list_1)
+    [5]
+    >>> my_list_1.print_sorted()
+    [5]
+    >>> my_list_1.append(4)
+    >>> print(my_list_1)
+    [5, 4]
+    >>> my_list_1.print_sorted()
+    [4, 5]
+    >>> my_list_1.append("4")
+    >>> print(my_list_1)
+    [5, 4, '4']
+    >>> my_list_1.print_sorted()
+    Traceback (most recent call last):
+    TypeError: unorderable types: str() < int()
+    
+    >>> my_list_2 = MyList()
+    >>> my_list_2.append(-5)
+    >>> print(my_list_2)
+    [-5]
+    >>> my_list_2.print_sorted()
+    [-5]
+    >>> my_list_2.append(-5)
+    >>> print(my_list_2)
+    [-5, -5]
+    >>> my_list_2.print_sorted()
+    [-5, -5]
+    >>> my_list_2.append(1250)
+    >>> print(my_list_2)
+    [-5, -5, 1250]
+    >>> my_list_2.print_sorted()
+    [-5, -5, 1250]
+    >>> my_list_2.append(int("-1250"))
+    >>> print(my_list_2)
+    [-5, -5, 1250, -1250]
+    >>> my_list_2.print_sorted()
+    [-1250, -5, -5, 1250]
+    >>> my_list_2.append((1, 0))
+    >>> print(my_list_2)
+    [-5, -5, 1250, -1250, (1, 0)]
+    >>> my_list_2.print_sorted()
+    Traceback (most recent call last):
+    TypeError: unorderable types: tuple() < int()
+
+    >>> my_list_3 = MyList()
+    >>> my_list_3.append("a")
+    >>> print(my_list_3)
+    ['a']
+    >>> my_list_3.print_sorted()
+    ['a']
+    >>> my_list_3.append("b")
+    >>> print(my_list_3)
+    ['a', 'b']
+    >>> my_list_3.print_sorted()
+    ['a', 'b']
+    >>> my_list_3.append("A")
+    >>> print(my_list_3)
+    ['a', 'b', 'A']
+    >>> my_list_3.print_sorted()
+    ['A', 'a', 'b']
+    >>> my_list_3.append("Ala")
+    >>> print(my_list_3)
+    ['a', 'b', 'A', 'Ala']
+    >>> my_list_3.print_sorted()
+    ['A', 'Ala', 'a', 'b']
+    >>> my_list_3.append((1, 0))
+    >>> print(my_list_3)
+    ['a', 'b', 'A', 'Ala', (1, 0)]
+    >>> my_list_3.print_sorted()
+    Traceback (most recent call last):
+    TypeError: unorderable types: tuple() < str()
+
+    >>> my_list_4 = MyList()
+    >>> print(my_list_4)
+    []
+    >>> my_list_4.print_sorted()
+    []
+    >>> my_list_4.append((1, 0))
+    >>> my_list_4.print_sorted()
+    [(1, 0)]
+    >>> my_list_4.append((1, 1))
+    >>> my_list_4.print_sorted()
+    [(1, 0), (1, 1)]
+    >>> my_list_4.append((1, ))
+    >>> my_list_4.print_sorted()
+    [(1,), (1, 0), (1, 1)]
+    >>> my_list_4.append((1))
+    >>> my_list_4.print_sorted()
+    Traceback (most recent call last):
+    TypeError: unorderable types: int() < tuple()
+
+    >>> my_list_5 = MyList()
+    >>> my_list_5.append(None)
+    >>> my_list_5.print_sorted()
+    [None]
+    >>> my_list_5.append(None)
+    >>> my_list_5.print_sorted()
+    Traceback (most recent call last):
+    TypeError: unorderable types: NoneType() < NoneType()
+
+    >>> my_list_6 = MyList()
+    >>> my_list_6.append(True)
+    >>> my_list_6.print_sorted()
+    [True]
+    >>> my_list_6.append(False)
+    >>> my_list_6.print_sorted()
+    [False, True]

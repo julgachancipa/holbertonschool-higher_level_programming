@@ -52,3 +52,7 @@ Now use it:
     >>> fig_1.area()
     Traceback (most recent call last):
     Exception: area() is not implemented
+    >>> fig_1.integer_validator("age", {3, 4})
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+    

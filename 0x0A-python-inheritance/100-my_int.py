@@ -12,7 +12,7 @@ class MyInt(int):
         self.__val = val
 
     def __ne__(self, other):
-        return not self.__val.__eq__(other)
+        return self.__val == other
 
     def __eq__(self, other):
-        return not self.__val.__ne__(other)
+        return self.__val != other

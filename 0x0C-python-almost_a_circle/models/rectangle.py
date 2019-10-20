@@ -29,18 +29,30 @@ class Rectangle(Base):
                 format(self.id, self.__x, self.__y,
                        self.__width, self.__height))
 
-    def update(self, *args):
-        for k in range(len(args)):
-            if k == 0:
-                Base.__init__(self, args[0])
-            elif k == 1:
-                self.width = args[1]
-            elif k == 2:
-                self.height = args[2]
-            elif k == 3:
-                self.x = args[3]
-            elif k == 4:
-                self.y = args[4]
+    def update(self, *args, **kwargs):
+        if args is not None and len(args) > 0:
+            for k in range(len(args)):
+                if k == 0:
+                    Base.__init__(self, args[0])
+                elif k == 1:
+                    self.width = args[1]
+                elif k == 2:
+                    self.height = args[2]
+                elif k == 3:
+                    self.x = args[3]
+                elif k == 4:
+                    self.y = args[4]
+        else:
+            if 'id' in kwargs:
+                Base.__init__(self, kwargs['id'])
+            if 'width' in kwargs:
+                self.width = kwargs['width']
+            if 'height' in kwargs:
+                self.height = kwargs['height']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
+            if 'y' in kwargs:
+                self.y = kwargs['y']
 
     @property
     def width(self):

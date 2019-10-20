@@ -29,6 +29,19 @@ class Rectangle(Base):
                 format(self.id, self.__x, self.__y,
                        self.__width, self.__height))
 
+    def update(self, *args):
+        for k in range(len(args)):
+            if k == 0:
+                Base.__init__(self, args[0])
+            elif k == 1:
+                self.width = args[1]
+            elif k == 2:
+                self.height = args[2]
+            elif k == 3:
+                self.x = args[3]
+            elif k == 4:
+                self.y = args[4]
+
     @property
     def width(self):
         return self.__width

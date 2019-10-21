@@ -37,3 +37,12 @@ class Base:
             with open(cls.__name__ + ".json", mode='w',
                       encoding='utf-8') as json_f:
                 json_f.write(cls.to_json_string(list_objs))
+
+    def from_json_string(json_string):
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        ex = cls(1, 1, 1)
+        ex.update(**dictionary)
+        return ex

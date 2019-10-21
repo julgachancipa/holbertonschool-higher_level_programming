@@ -103,3 +103,12 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def to_dictionary(self):
+        o_d = self.__dict__
+        names_list = ['width', 'height', 'x', 'y']
+        d = {}
+        for k in names_list:
+            d[k] = o_d['_Rectangle__' + k]
+        d['id'] = o_d['id']
+        return d

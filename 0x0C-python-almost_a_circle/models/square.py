@@ -46,3 +46,13 @@ class Square(Rectangle):
                 self.x = kwargs['x']
             if 'y' in kwargs:
                 self.y = kwargs['y']
+
+    def to_dictionary(self):
+        o_d = self.__dict__
+        names_list = ['x', 'y']
+        d = {}
+        for k in names_list:
+            d[k] = o_d['_Rectangle__' + k]
+        d['id'] = o_d['id']
+        d['size'] = o_d['_Rectangle__width']
+        return d

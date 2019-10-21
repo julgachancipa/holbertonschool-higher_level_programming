@@ -3,6 +3,7 @@
 first class Base
 """
 import json
+import os.path
 
 
 class Base:
@@ -18,6 +19,7 @@ class Base:
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return '[]'
@@ -38,6 +40,7 @@ class Base:
                       encoding='utf-8') as json_f:
                 json_f.write(cls.to_json_string(list_objs))
 
+    @staticmethod
     def from_json_string(json_string):
         return json.loads(json_string)
 
@@ -46,3 +49,17 @@ class Base:
         ex = cls(1, 1, 1)
         ex.update(**dictionary)
         return ex
+
+    @classmethod
+    def load_from_file(cls):
+        lst = []
+        if os.path.isfile(cls.__name__ + '.json'):
+            with open(cls.__name__ + ".json",
+                      encoding='utf-8') as json_f:
+                json_str = json_f.read()
+                obj_dics = cls.from_json_string(json_str)
+                for dicts in obj_dics:
+                    lst.append(cls.create(**dicts))
+                return lst
+        else:
+            return lst

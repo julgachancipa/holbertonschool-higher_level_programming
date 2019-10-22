@@ -10,23 +10,38 @@ class Square(Rectangle):
     class Square
     """
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        init method
+        """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """
+        str method
+        """
         return ("[Square] ({}) {}/{} - {}".
                 format(self.id, self.x, self.y,
                        self.width))
 
     @property
     def size(self):
+        """
+        size g. method
+        """
         return self.width
 
     @size.setter
     def size(self, size):
+        """
+        size s. method
+        """
         self.width = size
         self.height = size
 
     def update(self, *args, **kwargs):
+        """
+        update method
+        """
         if args is not None and len(args) > 0:
             for k in range(len(args)):
                 if k == 0:
@@ -48,6 +63,9 @@ class Square(Rectangle):
                 self.y = kwargs['y']
 
     def to_dictionary(self):
+        """
+        to dict method
+        """
         o_d = self.__dict__
         names_list = ['x', 'y']
         d = {}

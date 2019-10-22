@@ -28,7 +28,7 @@ class Base:
         to json m
         """
         if list_dictionaries is None or len(list_dictionaries) is 0:
-            return '[]'
+            return json.dumps([])
         else:
             return json.dumps(list_dictionaries)
 

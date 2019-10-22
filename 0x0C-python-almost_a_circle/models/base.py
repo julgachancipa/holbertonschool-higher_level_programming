@@ -27,7 +27,7 @@ class Base:
         """
         to json m
         """
-        if list_dictionaries is None and len(list_dictionaries) == 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return '[]'
         return json.dumps(list_dictionaries)
 
@@ -36,7 +36,7 @@ class Base:
         """
         to file method
         """
-        if list_objs is not None and len(list_objs) > 0:
+        if list_objs is not None or len(list_objs) > 0:
             lst = []
             for obj in list_objs:
                 json_dict = obj.to_dictionary()

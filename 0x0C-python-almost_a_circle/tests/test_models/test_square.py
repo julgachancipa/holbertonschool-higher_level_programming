@@ -87,9 +87,9 @@ class TestBaseClass(unittest.TestCase):
         self.assertRaises(ValueError, Rectangle, 1, 2, -5, 3)
 
     def test_right_id_cases(self):
-        self.assertEqual(Rectangle(1, 2).id, 10)
-        self.assertEqual(Rectangle(1, 2, 3).id, 11)
-        self.assertEqual(Rectangle(1, 2, 3, 4).id, 12)
+        self.assertEqual(Rectangle(1, 2).id, 64)
+        self.assertEqual(Rectangle(1, 2, 3).id, 65)
+        self.assertEqual(Rectangle(1, 2, 3, 4).id, 66)
         self.assertEqual(Rectangle(1, 2, 3, 4, 5).id, 5)
         self.assertEqual(Rectangle(1, 2, id=0).id, 0)
         self.assertEqual(Rectangle(1, 2, 3, id=-54).id, -54)

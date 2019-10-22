@@ -7,8 +7,13 @@ from models.rectangle import Rectangle
 
 
 class TestBaseClass(unittest.TestCase):
-
+    """
+    TBC
+    """
     def test_right_width_cases(self):
+        """
+        t
+        """
         self.assertEqual(Rectangle(1, 2).width, 1)
         self.assertEqual(Rectangle(3, 2, 3).width, 3)
         self.assertEqual(Rectangle(5, 2, 3, 4).width, 5)
@@ -22,6 +27,9 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(Rectangle(21, 2, 3, 4, id={'1': 2}).width, 21)
 
     def test_wrong_width_cases(self):
+        """
+        t
+        """
         self.assertRaises(TypeError, Rectangle, 'st', 1)
         self.assertRaises(TypeError, Rectangle, [1, 2], 3)
         self.assertRaises(TypeError, Rectangle, (1, 2), 6)
@@ -33,6 +41,9 @@ class TestBaseClass(unittest.TestCase):
         self.assertRaises(ValueError, Rectangle, -5, 3)
 
     def test_right_height_cases(self):
+        """
+        t
+        """
         self.assertEqual(Rectangle(1, 2).height, 2)
         self.assertEqual(Rectangle(3, 2, 3).height, 2)
         self.assertEqual(Rectangle(5, 2, 3, 4).height, 2)
@@ -46,6 +57,9 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(Rectangle(21, 2, 3, 4, id={'1': 2}).height, 2)
 
     def test_wrong_height_cases(self):
+        """
+        t
+        """
         self.assertRaises(TypeError, Rectangle, 1, 'st')
         self.assertRaises(TypeError, Rectangle, 1, [1, 2])
         self.assertRaises(TypeError, Rectangle, 1, (1, 2))
@@ -57,11 +71,17 @@ class TestBaseClass(unittest.TestCase):
         self.assertRaises(ValueError, Rectangle, 1, -5, 3)
 
     def test_right_x_cases(self):
+        """
+        t
+        """
         self.assertEqual(Rectangle(1, 2, 3).x, 3)
         self.assertEqual(Rectangle(1, 2).x, 0)
         self.assertEqual(Rectangle(1, 2, 0).x, 0)
 
     def test_wrong_x_cases(self):
+        """
+        t
+        """
         self.assertRaises(TypeError, Rectangle, 1, 2, 'st')
         self.assertRaises(TypeError, Rectangle, 1, 2, [1, 2])
         self.assertRaises(TypeError, Rectangle, 1, 2, (1, 2))
@@ -72,11 +92,17 @@ class TestBaseClass(unittest.TestCase):
         self.assertRaises(ValueError, Rectangle, 1, 2, -5, 3)
 
     def test_right_y_cases(self):
+        """
+        t
+        """
         self.assertEqual(Rectangle(1, 2, 3, 4).y, 4)
         self.assertEqual(Rectangle(1, 2).y, 0)
         self.assertEqual(Rectangle(1, 2, 0, 0).y, 0)
 
     def test_wrong_y_cases(self):
+        """
+        t
+        """
         self.assertRaises(TypeError, Rectangle, 1, 2, 'st')
         self.assertRaises(TypeError, Rectangle, 1, 2, [1, 2])
         self.assertRaises(TypeError, Rectangle, 1, 2, (1, 2))
@@ -87,6 +113,9 @@ class TestBaseClass(unittest.TestCase):
         self.assertRaises(ValueError, Rectangle, 1, 2, -5, 3)
 
     def test_right_id_cases(self):
+        """
+        t
+        """
         self.assertEqual(Rectangle(1, 2).id, 10)
         self.assertEqual(Rectangle(1, 2, 3).id, 11)
         self.assertEqual(Rectangle(1, 2, 3, 4).id, 12)
@@ -100,12 +129,18 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(Rectangle(1, 2, 3, 4, id={'1': 2}).id, {'1': 2})
 
     def test_right_area_cases(self):
+        """
+        t
+        """
         self.assertEqual(Rectangle(1, 2).area(), 2)
         self.assertEqual(Rectangle(3, 2).area(), 6)
         self.assertEqual(Rectangle(2, 10).area(), 20)
         self.assertEqual(Rectangle(8, 7, 0, 0, 12).area(), 56)
 
     def test_right_update_args_cases(self):
+        """
+        t
+        """
         R = Rectangle(1, 2)
         R.update(9)
         self.assertEqual(R.id, 9)
@@ -120,6 +155,9 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(R.y, 10)
 
     def test_right_update_kwargs_cases(self):
+        """
+        t
+        """
         R = Rectangle(1, 2)
         R.update(id=9)
         self.assertEqual(R.id, 9)
@@ -134,6 +172,9 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(R.y, 10)
 
     def test_wrong_init_cases(self):
+        """
+        t
+        """
         self.assertRaises(TypeError, Rectangle, n=0)
         self.assertRaises(TypeError, Rectangle, None)
         self.assertRaises(TypeError, Rectangle, 1)

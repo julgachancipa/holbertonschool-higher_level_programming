@@ -7,8 +7,13 @@ from models.base import Base
 
 
 class TestBaseClass(unittest.TestCase):
-
+    """
+    Test BC
+    """
     def test_right_id_cases(self):
+        """
+        right cases
+        """
         self.assertEqual(Base().id, 1)
         self.assertEqual(Base(-1).id, -1)
         self.assertEqual(Base(48).id, 48)
@@ -27,6 +32,9 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(Base(3.1416).id, 3.1416)
 
     def test_wrong_init_cases(self):
+        """
+        wrong cases
+        """
         self.assertRaises(TypeError, Base, n=0)
         self.assertRaises(TypeError, Base, 1, 2)
         self.assertRaises(TypeError, Base, '1', 2)

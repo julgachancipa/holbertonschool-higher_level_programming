@@ -13,6 +13,9 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+        init method
+        """
         if id is not None:
             self.id = id
         else:
@@ -21,12 +24,18 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """
+        to json m
+        """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return '[]'
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        to file method
+        """
         if list_objs is not None and len(list_objs) > 0:
             lst = []
             for obj in list_objs:
@@ -42,16 +51,25 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+        from json
+        """
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        create method
+        """
         ex = cls(1, 1, 1)
         ex.update(**dictionary)
         return ex
 
     @classmethod
     def load_from_file(cls):
+        """
+        from file
+        """
         lst = []
         if os.path.isfile(cls.__name__ + '.json'):
             with open(cls.__name__ + ".json",

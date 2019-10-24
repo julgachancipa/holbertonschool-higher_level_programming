@@ -64,8 +64,6 @@ class Base:
                     my_pen.right(90)
                 my_pen.end_fill()
 
-        my_pen.done()
-
     @staticmethod
     def to_json_string(list_dictionaries):
         """

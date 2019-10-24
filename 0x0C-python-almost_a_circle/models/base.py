@@ -5,6 +5,8 @@ first class Base
 import json
 import os.path
 import csv
+import turtle
+import random
 
 
 class Base:
@@ -22,6 +24,47 @@ class Base:
         else:
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        draw rectangles and squares with turtle
+        """
+        colors = ['Pale Green', 'Green Yellow', 'Forest Green',
+                  'Turquoise', 'Slate Blue', 'Yellow',  'Cyan',
+                  'Deep Pink', 'Orange Red']
+        my_pen = turtle.Turtle()
+        if list_rectangles is not None and len(list_rectangles) > 0:
+            for rect in list_rectangles:
+                my_pen.fillcolor(random.choice(colors))
+                my_pen.up()
+                my_pen.ht()
+                my_pen.goto(rect.x, rect.y)
+                my_pen.st()
+                my_pen.down()
+                my_pen.begin_fill()
+                for side in range(2):
+                    my_pen.forward(rect.width)
+                    my_pen.right(90)
+                    my_pen.forward(rect.height)
+                    my_pen.right(90)
+                my_pen.end_fill()
+
+        if list_squares is not None and len(list_squares) > 0:
+            for sqr in list_squares:
+                my_pen.fillcolor(random.choice(colors))
+                my_pen.up()
+                my_pen.ht()
+                my_pen.goto(sqr.x, sqr.y)
+                my_pen.st()
+                my_pen.down()
+                my_pen.begin_fill()
+                for side in range(4):
+                    my_pen.forward(sqr.size)
+                    my_pen.right(90)
+                my_pen.end_fill()
+
+        my_pen.done()
 
     @staticmethod
     def to_json_string(list_dictionaries):

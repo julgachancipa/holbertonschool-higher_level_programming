@@ -1,13 +1,13 @@
 -- lists all the cities of California.
 SELECT
-	id, name
+	cities.id, cities.name
 FROM
 	cities
 WHERE
-	name NOT IN (SELECT
-	     name
+	state_id = (SELECT
+		id
 	FROM
 		states
 	WHERE
 		name = 'California')
-ORDER BY id ASC;
+ORDER BY cities.id ASC;

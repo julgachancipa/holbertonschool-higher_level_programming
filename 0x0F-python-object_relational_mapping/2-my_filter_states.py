@@ -18,6 +18,7 @@ if __name__ == "__main__":
                 .format(str_search))
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row)
+        if row[1] == str_search:
+            print(row)
     cur.close()
     conn.close()

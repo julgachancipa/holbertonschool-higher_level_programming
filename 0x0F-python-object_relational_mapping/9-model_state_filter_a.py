@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""objects that contain the letter a"""
 import sys
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine

@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""State object from the database hbtn_0e_6_usa"""
 import sys
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine

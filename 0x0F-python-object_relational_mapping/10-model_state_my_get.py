@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""State object with the name passed as argument"""
 import sys
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine

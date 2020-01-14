@@ -10,8 +10,9 @@ if __name__ == "__main__":
     else:
         q = {'q': ""}
     r = requests.post('http://0.0.0.0:5000/search_user', q)
-    json_dict = r.json()
-    if json_dict is None:
+    try:
+        json_dict = r.json()
+    except:
         print('Not a valid JSON')
     try:
         print('[{}] {}'.format(json_dict['id'], json_dict['name']))

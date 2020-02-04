@@ -8,6 +8,5 @@ if (process.argv.length <= 3) {
     allArg.pop();
   }
   allArg.sort(function (a, b) { return a - b; });
-  console.log(allArg);
   console.log(allArg[allArg.length - 2]);
 }

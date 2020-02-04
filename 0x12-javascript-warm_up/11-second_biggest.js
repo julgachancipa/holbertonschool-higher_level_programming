@@ -8,6 +8,5 @@ if (process.argv.length <= 3) {
   while (isNaN(allArg[allArg.length - 1])) {
     allArg.pop();
   }
-  console.log(allArg);
   console.log(allArg[allArg.length - 2]);
 }

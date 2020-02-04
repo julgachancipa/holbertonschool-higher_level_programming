@@ -1,1 +1,1 @@
-myVar = 333;
+var myVar = 333;

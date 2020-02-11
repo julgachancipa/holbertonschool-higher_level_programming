@@ -10,11 +10,12 @@ request.get(requestURL, function (err, res, body) {
     const todosList = JSON.parse(body);
     todosList.forEach(todo => {
       const usrId = todo.userId;
-      if (!(usrId in comUser)) {
-        comUser[usrId] = 0;
-      }
       if (todo.completed === true) {
-        comUser[usrId] += 1;
+	  if (!(usrId in comUser)) {
+              comUser[usrId] = 1;
+	  } else {
+              comUser[usrId] += 1;
+	  }
       }
     });
     console.log(comUser);

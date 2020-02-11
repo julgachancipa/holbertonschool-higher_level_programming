@@ -11,11 +11,11 @@ request.get(requestURL, function (err, res, body) {
     todosList.forEach(todo => {
       const usrId = todo.userId;
       if (todo.completed === true) {
-	  if (!(usrId in comUser)) {
-              comUser[usrId] = 1;
-	  } else {
-              comUser[usrId] += 1;
-	  }
+        if (!(usrId in comUser)) {
+          comUser[usrId] = 1;
+        } else {
+          comUser[usrId] += 1;
+        }
       }
     });
     console.log(comUser);

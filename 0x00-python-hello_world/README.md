@@ -80,7 +80,8 @@ Holberton teaches full-stack software engineering with a project-based approach.
 The first part of our on-site intensive education covers the foundations of software
 engineering, including low-level programming, DevOps, and high-level modern languages.
 
-This project is part of *low-level programming*, where you will understand how programming languages and Unix systems work, “what is going
-on under the hood”. This will allow you to optimize and debug anything later in your career.
-You will be working with algorithms and data structures which are essential foundations
-for any great Software Engineer, the type that the best companies want to hire.
+This project is part of *high-level programming*, where you will create a complete web service with databases, back-end, and an amazing front-end
+website with the latest technologies. This project will give you all the skills to work in the best
+companies in Silicon Valley such as Facebook or Dropbox. You will gain the skills to quickly
+learn and adapt to new frameworks for building products or to iterate on an existing
+codebase.
